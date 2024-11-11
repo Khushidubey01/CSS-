@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeting Robot</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+     background-image: url('/storage/emulated/0/Download/img1.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .container {
+      background-color: ivory;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      animation: rotateShadow 5s linear infinite;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0px 4px 20px rgba(128, 0, 128, 0.5), 
+                 20px 4px 20px rgba(255, 165, 0, 0.5), 
+                 4px 20px 20px rgba(137, 207, 240, 0.5), 
+                 -20px 4px 20px rgba(245, 255, 220, 0.5);
+    }
+    
+    @keyframes rotateShadow {
+      0% {
+        box-shadow: 0px 4px 20px rgba(128, 0, 128, 0.5), 
+                   20px 4px 20px rgba(255, 165, 0, 0.3), 
+                   4px 20px 20px rgba(137, 207, 240, 0.5), 
+                   -20px 4px 20px rgba(245, 255, 220, 0.3);
+      }
+      25% {
+        box-shadow: 20px 4px 20px rgba(128, 0, 128, 0.5), 
+                   4px 20px 20px rgba(255, 165, 0, 0.3), 
+                   -20px 4px 20px rgba(137, 207, 240, 0.5), 
+                   0px 4px 20px rgba(245, 255, 220, 0.3);
+      }
+      50% {
+        box-shadow: 4px 20px 20px rgba(128, 0, 128, 0.5), 
+                   -20px 4px 20px rgba(255, 165, 0, 0.3), 
+                   0px 4px 20px rgba(137, 207, 240, 0.5), 
+                   20px 4px 20px rgba(245, 255, 220, 0.3);
+      }
+      75% {
+        box-shadow: -20px 4px 20px rgba(128, 0, 128, 0.5), 
+                   0px 4px 20px rgba(255, 165, 0, 0.3), 
+                   20px 4px 20px rgba(137, 207, 240, 0.5), 
+                   4px 20px 20px rgba(245, 255, 220, 0.3);
+      }
+      100% {
+        box-shadow: 0px 4px 20px rgba(128, 0, 128, 0.5), 
+                   20px 4px 20px rgba(255, 165, 0, 0.3), 
+                   4px 20px 20px rgba(137, 207, 240, 0.5), 
+                   -20px 4px 20px rgba(245, 255, 220, 0.3);
+      }
+    }
+    
+    h1 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      color: #555;
+    }
+    
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      border-radius: 10px;
+      border: 2px solid #ddd;
+      font-size: 1em;
+      margin-top: 15px;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 25px;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin-top:20px;
+      transition: background-color 0.3s;
+      }
+      
+      button:hover {
+      background-color: #45a049;
+      }
+      
+      #greetingMessage {
+      color: #4CAF50;
+      font-size: 1.5em;
+      margin-top: 20px;
+      }
+      </style>
+      <script>
+      function greetUser() {
+      var name = document.getElementById("name").value;
+      var date = new Date();
+      var hours = date.getHours();
+      var greeting;
+      
+      if (hours < 12) {
+      greeting = "Good Morning";
+      } else if (hours < 16) {
+      greeting = "Good Afternoon";
+      } else {
+      greeting = "Good Evening";
+      }
+      
+      document.getElementById("greetingMessage").innerHTML = greeting + ", " + name ;
+      }
+      </script>
+      </head>
+      
+      <body>
+      <div class="container">
+      <h1>Hello👋, It's your Greeting Robot🤖</h1>
+      <h2>Enter your name please:</h2>
+      <input type="text" id="name" placeholder="Your Name">
+      <br><br>
+      <button onclick="greetUser()">Submit</button>
+      <h2 id="greetingMessage"></h2>
+      </div>
+      </body>
+      </html>
